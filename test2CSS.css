@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { /* format for now (open panel placement*/
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 2fr 1fr;
+  font-family: sans-serif;
+  background: #f0f0f0;
+}
+
+/* header*/
+header { 
+  grid-column: 1 / span 3;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+header button { /* placeholder css until bootstrap ?*/
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: #eee;
+  cursor: pointer;
+}
+
+/* panels, just for display rn, we will add function like next week but I wanted them displayed open for now */
+.panel {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+#backgroundpanel {
+  grid-column: 1;
+}
+
+#audiopanel {
+  grid-column: 3;
+}
+
+/* panel headers (where buttons r) */
+.panelheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.panelheader button {  /* placeholder button until bootstrap too */
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Galleries (empty for now, this is like the inside of the panels for rn, not the full page gallery display) */
+.gallery {
+  min-height: 200px; /* placeholder height */
+  border: 1px dashed #ccc;
+}
+
+/* Footer */
+footer {
+  grid-column: 1 / span 3;
+  background: #fff;
+  text-align: center;
+  padding: 0.5rem;
+  border-top: 1px solid #ccc;
+}
