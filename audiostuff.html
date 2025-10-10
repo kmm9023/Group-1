@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=deviceFirstContent".00">
+  <title>Audio Gallery</title>
+  <style>
+    body {
+      background-color: #f8f4e8;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 36pt;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      font-size: 24pt;
+      margin-top: 80px;
+      margin-bottom: 50px;
+    }
+
+    .soundsection {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto 80px auto;
+    }
+
+    .sound {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sound img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    /* sliders */
+    input[type="range"] {
+      width: 60px;
+      height: 10px;
+      -webkit-appearance: none;
+      border-radius: 5px;
+      background: linear-gradient(to right, #555 50%, #ccc 50%);
+      cursor: pointer;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #222;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #222;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Audio Gallery</h1>
+
+  <h2>Rain</h2>
+  <div class="sound-section">
+    <div class="sound">
+      <img src="put defult icon here" data-active="put active icon here" alt="Rain Sound 1" onclick="toggleSound(this, 'rain1')">
+      <input type="range" min="0" max="100" value="50" oninput="updateSlider(this)">
+    </div>
+    <div class="sound">
+      <img src="put defult icon here" data-active="put active icon here" alt="Rain Sound 2" onclick="toggleSound(this, 'rain2')">
+      <input type="range" min="0" max="100" value="50" oninput="updateSlider(this)">
+    </div>
+  </div>
+
+  <h2>Birds</h2>
+  <div class="soundsection">
+    <div class="sound">
+      <img src=" put defult icon here " data-active="put active icon here" alt="Bird Sound 1" onclick="toggleSound(this, 'bird1')">
+      <input type="range" min="0" max="100" value="50" oninput="updateSlider(this)">
+    </div>
+    <div class="sound">
+      <img src="put defult icon here " data-active="put active icon here" alt="Bird Sound 2" onclick="toggleSound(this, 'bird2')">
+      <input type="range" min="0" max="100" value="50" oninput="updateSlider(this)">
+    </div>
+  </div>
+
+  <h2>Thunder</h2>
+  <div class="soundsection">
+    <div class="sound">
+      <img src=" put defult icon here" data-active="put active icon here" alt="Thunder Sound 1" onclick="toggleSound(this, 'thunder1')">
+      <input type="range" min="0" max="100" value="50" oninput="updateSlider(this)">
+    </div>
+    <div class="sound">
+      <img src=" put defult icon here" data-active="put active icon here" alt="Thunder Sound 2" onclick="toggleSound(this, 'thunder2')">
+      <input type="range" min="0" max="100" value="50" oninput="updateSlider(this)">
+    </div>
+  </div>
+
+  <script>
+    const sounds = {};
+
+    function toggleSound(img, soundName) {
+      if (sounds[soundName]) {
+        // If sound is already playing → stop it
+        sounds[soundName].pause();
+        sounds[soundName].currentTime = 0;
+        delete sounds[soundName];
+        img.src = " put defult icon here"; // back to default icon
+      } else {
+        // If not playing then start sound
+        const audio = new Audio(soundName + ".mp3");
+        audio.loop = true;
+        audio.play();
+        sounds[soundName] = audio;
+        img.src = img.dataset.active; // change to active icon
+      }
+    }
+
+    function updateSlider(slider) {
+      const value = (slider.value - slider.min) / (slider.max - slider.min);
+      const percent = value * 100;
+      slider.style.background = `linear-gradient(to right, #555 ${percent}%, #ccc ${percent}%)`;
+    }
+
+    // Initialize all sliders on load
+    document.queryDFF="doen-hone" ? "falsafontname":"de".again="";
+    window.onload = () => {
+      document.querySelectorAll('input[type="range"]').forEach(updateSlider);
+    };
+  </script>
+
+</body>
+</html>
