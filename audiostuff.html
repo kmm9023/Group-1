@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Gallery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Gabriela', serif; /* main font */
+
+  color: #1E343B;
+  background-color: #f8f4e8;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: 'Gabriela', serif;
+  font-weight: 500;
+  color: #1E343B;
+}
+
+.sound-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+}
+
+.sound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.sound img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.lofi img {
+  width: 150px;  /* ~2.5x normal */
+  height: 150px;
+}
+
+.sound-title {
+  font-size: 16pt;
+  margin-bottom: 5px;
+}
+
+
+input[type="range"] {
+  width: 60px;
+  height: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  background: linear-gradient(to right, #555 50%, #ccc 50%);
+  cursor: pointer;
+  outline: none;
+  display: none; 
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #222;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #222;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Audio Gallery</h1>
+
+<!-- RAIN -->
+<h2>Rain</h2>
+<div class="sound-section">
+  <div class="sound"><img src="images/cloud1off.png" data-active="images/cloud1on.png" alt="Rain 1" onclick="toggleSound(this,'rain_1.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/cloud2off.png" data-active="images/cloud2on.png" alt="Rain 2" onclick="toggleSound(this,'rain_2.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/cloud5off.png" data-active="images/cloud5on.png" alt="Rain 3" onclick="toggleSound(this,'rain_3.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/cloud6off.png" data-active="images/cloud6on.png" alt="Rain 4" onclick="toggleSound(this,'rain_4.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/cloud7off.png" data-active="images/cloud7on.png" alt="Rain 5" onclick="toggleSound(this,'rain_5.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+</div>
+
+<!-- BIRDS -->
+<h2>Birds</h2>
+<div class="sound-section">
+  <div class="sound"><img src="images/bird1off.png" data-active="images/bird1on.png" alt="Bird 1" onclick="toggleSound(this,'birds_1.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/bird2off.png" data-active="images/bird2on.png" alt="Bird 2" onclick="toggleSound(this,'birds_2.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/bird3off.png" data-active="images/bird3on.png" alt="Bird 3" onclick="toggleSound(this,'birds_3.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/bird5off.png" data-active="images/bird5on.png" alt="Bird 4" onclick="toggleSound(this,'birds_4.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+</div>
+
+<!-- OCEAN -->
+<h2>Ocean</h2>
+<div class="sound-section">
+  <div class="sound"><img src="images/waves1off.png" data-active="images/waves1on.png" alt="Ocean 1" onclick="toggleSound(this,'ocean_1.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/waves2off.png" data-active="images/waves2on.png" alt="Ocean 2" onclick="toggleSound(this,'ocean_2.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/waves3off.png" data-active="images/waves3on.png" alt="Ocean 3" onclick="toggleSound(this,'ocean_3.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/waves4off.png" data-active="images/waves4on.png" alt="Ocean 4" onclick="toggleSound(this,'ocean_4.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/waves5off.png" data-active="images/waves5on.png" alt="Ocean 5" onclick="toggleSound(this,'ocean_5.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+</div>
+
+<!-- INTERIOR CHATTER -->
+<h2>Inside Chatter</h2>
+<div class="sound-section">
+  <div class="sound"><img src="images/cup1off.png" data-active="images/cup1on.png" alt="Chatter 1" onclick="toggleSound(this,'interior_chatter_1.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/cup2off.png" data-active="images/cup2on.png" alt="Chatter 2" onclick="toggleSound(this,'interior_chatter_2.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/cup3off.png" data-active="images/cup3on.png" alt="Chatter 3" onclick="toggleSound(this,'interior_chatter_3.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+</div>
+
+<!-- CITY AMBIENCE -->
+<h2>City Ambience</h2>
+<div class="sound-section">
+  <div class="sound"><img src="images/city1off.png" data-active="images/city1on.png" alt="City 1" onclick="toggleSound(this,'city_ambience_1.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/city2off.png" data-active="images/city2on.png" alt="City 2" onclick="toggleSound(this,'city_ambience_2.m4a')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/city3off.png" data-active="images/city3on.png" alt="City 3" onclick="toggleSound(this,'city_ambience_3.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/train1off.png" data-active="images/train1on.png" alt="City 4" onclick="toggleSound(this,'city_ambience_4.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/train2off.png" data-active="images/train2on.png" alt="City 5" onclick="toggleSound(this,'city_ambience_5.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+</div>
+
+<!-- FIRE -->
+<h2>Crackling Fire</h2>
+<div class="sound-section">
+  <div class="sound"><img src="images/fire1off.png" data-active="images/fire1on.png" alt="Fire 1" onclick="toggleSound(this,'fire_1.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/fire2off.png" data-active="images/fire2on.png" alt="Fire 2" onclick="toggleSound(this,'fire_2.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/fire3off.png" data-active="images/fire3on.png" alt="Fire 3" onclick="toggleSound(this,'fire_3.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+</div>
+
+<!-- WIND -->
+<h2>Wind</h2>
+<div class="sound-section">
+  <div class="sound"><img src="images/wind1off.png" data-active="images/wind1on.png" alt="Wind 1" onclick="toggleSound(this,'wind_1.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/wind2off.png" data-active="images/wind2on.png" alt="Wind 2" onclick="toggleSound(this,'wind_2.mp3')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/wind3off.png" data-active="images/wind3on.png" alt="Wind 3" onclick="toggleSound(this,'wind_3.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+</div>
+
+<!-- INSECTS -->
+<h2>Insect Chirping</h2>
+<div class="sound-section">
+  <div class="sound"><img src="images/flower1off.png" data-active="images/flower1on.png" alt="Insect 1" onclick="toggleSound(this,'insect_chirping_1.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/bugoff.png" data-active="images/bugon.png" alt="Insect 2" onclick="toggleSound(this,'insect_chirping_2.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/flower2off.png" data-active="images/flower2on.png" alt="Insect 3" onclick="toggleSound(this,'insect_chirping_3.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/flower3off.png" data-active="images/flower3off.png" alt="Insect 4" onclick="toggleSound(this,'insect_chirping_4.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+</div>
+
+<!-- WHITE NOISE -->
+<h2>White Noise</h2>
+<div class="sound-section">
+  <div class="sound"><img src="images/noise1off.png" data-active="images/noise1on.png" alt="White 1" onclick="toggleSound(this,'white_noise_1.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/noise2off.png" data-active="images/noise2on.png" alt="White 2" onclick="toggleSound(this,'white_noise_2.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+  <div class="sound"><img src="images/noise3off.png" data-active="images/noise3on.png" alt="White 3" onclick="toggleSound(this,'white_noise_3.wav')"><input type="range" min="0" max="100" value="50" oninput="updateSlider(this)"></div>
+</div>
+
+<!-- LOFI -->
+<h2>Lofi</h2>
+<div class="sound-section lofi">
+  <div class="sound">
+    <div class="sound-title">Autumn Stroll</div>
+    <img src="images/lofi1off.png" data-active="images/lofi1on.png" alt="Lofi 1" onclick="toggleSound(this,'lofi_1.mp3')">
+    <input type="range" min="0" max="100" value="50" oninput="updateSlider(this)">
+  </div>
+  <div class="sound">
+    <div class="sound-title">Espresso Mornings</div>
+    <img src="images/lofi2off.png" data-active="images/lofi2on.png" alt="Lofi 2" onclick="toggleSound(this,'lofi_2.mp3')">
+    <input type="range" min="0" max="100" value="50" oninput="updateSlider(this)">
+  </div>
+  <div class="sound">
+    <div class="sound-title">Life's A Game</div>
+    <img src="images/lofi3off.png" data-active="images/lofi3on.png" alt="Lofi 3" onclick="toggleSound(this,'lofi_3.mp3')">
+    <input type="range" min="0" max="100" value="50" oninput="updateSlider(this)">
+  </div>
+</div>
+
+<script>
+const sounds = {};
+const sliderValues = {}; 
+
+function toggleSound(img, soundName) {
+  const slider = img.nextElementSibling;
+
+  if (sounds[soundName]) {
+    sounds[soundName].pause();
+    delete sounds[soundName];
+    img.src = img.getAttribute('data-active').replace('on', 'off');
+    slider.style.display = 'none';
+  } else {
+    const volume = sliderValues[soundName] !== undefined ? sliderValues[soundName] : slider.value;
+    slider.value = volume;
+
+    const audio = new Audio('audio/' + soundName); 
+    audio.loop = true;
+    audio.volume = volume / 100;
+    audio.play();
+    sounds[soundName] = audio;
+
+    img.src = img.getAttribute('data-active');
+    slider.style.display = 'block';
+  }
+}
+
+function updateSlider(slider) {
+  const value = slider.value;
+  slider.style.background = `linear-gradient(to right, #555 ${value}%, #ccc ${value}%)`;
+
+  const img = slider.previousElementSibling;
+  const soundName = img.getAttribute('onclick').match(/'([^']+)'/)[1]; 
+
+  sliderValues[soundName] = value; 
+
+  if (sounds[soundName]) {
+    sounds[soundName].volume = value / 100;
+  }
+}
+
+window.onload = () => {
+  document.querySelectorAll('input[type="range"]').forEach(updateSlider);
+};
+</script>
+
+</body>
+</html>
